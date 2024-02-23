@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>slideshow</title>
+    <style>
+        *{
+            margin: 0;
+            padding: flex;
+            box-sizing: border-box;
+        }
+        body{
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .slideshow{
+            width: 350px;
+            height: 300px;
+            border: 300px;
+            box-decoration-break: slice;
+        }
+        img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            animation: reveal 1s;
+            border: 3px;
+            border-color: black;
+            border-style: dashed;
+            background-image: image('c:\Users\Lakshmi\OneDrive\Pictures\Screenshots\Screenshot 2024-02-23 192932.jpg');
+        }
+        @keyframes reveal{
+            0%{
+                opacity: 0.1;
+                transform: scale(1);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="slideshow">
+        <img src="c:\Users\Lakshmi\OneDrive\Pictures\Screenshots\Screenshot 2024-02-23 192932.png" class="img">
+    </div>
+    <script>
+        let imgEle=document.querySelector('.img');
+        let  imgs=["https://w0.peakpx.com/wallpaper/843/40/HD-wallpaper-sai-pallavi-cute-smile.jpg", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzFocP2LzkImeZzT9PHiIR0O4D9UCSQhxPRtp6CuBczw&s.jpg,https://www.wallsnapy.com/img_gallery/sai-pallavi-hd-wallpapers-926989.jpg"];
+        let i=0;
+
+
+        setInterval(
+            ()=>{
+                imgEle.src=imgs[i];
+                i++;
+                if(i==imgs.length){
+                    i=0
+                }
+            },1000
+        )
+    </script>
+</body>
+</html>
